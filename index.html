@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="color-scheme" content="light only">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Weekly Decisions | Max Weberman</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;600&family=Khand:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head><body>
+<header class="top"><div class="bar"><span class="wordmark">MAX WEBERMAN</span>
+  <div class="bar-right"><button id="connect" class="btn sm mw-hover">Connect Dropbox</button><button id="demo" class="btn sm mw-hover">Demo Mode</button></div></div></header>
+<main class="deck">
+  <div class="head"><h1 id="heading">Weekly Decisions</h1><p class="muted"><span id="week"></span> · <span id="mode"></span> · <span id="progress"></span></p>
+    <div class="track"><div id="bar" class="fill"></div></div></div>
+  <p id="msg" class="muted" role="status"></p>
+  <section id="stack" class="stack" aria-live="polite"></section>
+  <p class="hint muted" id="hint">← No · Yes →</p>
+  <div id="controls" class="controls">
+    <div class="row">
+      <button class="btn ans no mw-hover" data-a="no">No</button>
+      <button class="btn ans maybe mw-hover" data-a="maybe">Maybe</button>
+      <button class="btn ans love mw-hover" data-a="love"><span class="heart" aria-hidden="true">♥</span> Love</button>
+      <button class="btn ans yes mw-hover" data-a="yes">Yes</button>
+    </div>
+    <button id="skip" class="skip mw-hover">Skip</button>
+  </div>
+  <section id="results" hidden>
+    <div class="reshead"><h2>Results</h2>
+      <label class="label sortlbl">Sort <select id="sort" aria-label="Sort Results"><option value="az">Title A-Z</option><option value="za">Title Z-A</option><option value="answer">Answer</option><option value="owner">Owner</option></select></label></div>
+    <p id="summary" class="muted"></p>
+    <div id="list" class="list"></div>
+    <div class="resbtns"><button id="sync" class="btn sm mw-hover">Sync</button><button id="restart" class="btn sm mw-hover">Review Skipped</button></div>
+  </section>
+</main>
+<div class="sharebar"><button id="share" class="btn share mw-hover" aria-label="Share Decisions">Share</button></div>
+<footer class="foot">MAX WEBERMAN · Weekly Decisions</footer>
+<script src="config.js"></script><script src="app.js"></script>
+</body></html>

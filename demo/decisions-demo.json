@@ -1,0 +1,11 @@
+{
+ "week": "2026-41",
+ "items": [
+  {"id": "accent-palette", "title": "Accent Palette", "detail": "Demo only. Keep a sample accent color set for app buttons?", "options": ["Sample Set A", "Sample Set B"], "owner": "Branding"},
+  {"id": "heading-case", "title": "Heading Case", "detail": "Demo only. Use Title Case for headings everywhere?", "options": ["Title Case", "Sentence case"], "owner": "Branding"},
+  {"id": "pause-ads-test", "title": "Pause Ads Test", "detail": "Demo only. Pause a sample ad test for one week?", "owner": "Scout"},
+  {"id": "interview-questions", "title": "Interview Questions", "detail": "Demo only. Approve a sample question list for next week?", "owner": "Coach"},
+  {"id": "think-ahead-ideas", "title": "Think-Ahead Ideas", "detail": "Demo only. Keep a weekly list of sample ideas to try?", "owner": "Mo"},
+  {"id": "roster-trim", "title": "Roster Trim", "detail": "Demo only. Trim a sample list down to the active names?", "owner": "Mo"}
+ ]
+}
