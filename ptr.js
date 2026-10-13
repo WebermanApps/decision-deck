@@ -1,4 +1,5 @@
-/* Pull-to-refresh drop-in. Include: <script src="ptr.js" defer></script> */
+/* Pull-to-refresh drop-in. Include: <script src="ptr.js" defer></script>
+   Skips touches that start on canvas or [data-ptr-ignore] (3D viewers, swipe cards). */
 (function(){
   var html=document.documentElement;
   html.style.overscrollBehaviorY='auto';
@@ -10,7 +11,8 @@
   function add(){document.body.appendChild(ind);}
   document.body?add():document.addEventListener('DOMContentLoaded',add);
   function top(){return (window.scrollY||html.scrollTop)<=0;}
-  window.addEventListener('touchstart',function(e){y0=(top()&&e.touches.length===1)?e.touches[0].clientY:null;d=0;},{passive:true});
+  function ignore(t){return !!(t&&t.closest&&t.closest('canvas,[data-ptr-ignore]'));}
+  window.addEventListener('touchstart',function(e){y0=(top()&&e.touches.length===1&&!ignore(e.target))?e.touches[0].clientY:null;d=0;},{passive:true});
   window.addEventListener('touchmove',function(e){if(y0===null)return;d=e.touches[0].clientY-y0;if(d<=0||!top()){ind.style.transform='translateY(-48px)';return;}var p=Math.min(d/2,90);ind.style.transform='translateY('+(p-36)+'px) rotate('+(p*4)+'deg)';},{passive:true});
   window.addEventListener('touchend',function(){if(y0===null)return;ind.style.transition='transform .2s';if(d/2>=T){ind.style.transform='translateY(16px)';setTimeout(function(){location.reload();},150);}else{ind.style.transform='translateY(-48px)';}setTimeout(function(){ind.style.transition='none';},220);y0=null;},{passive:true});
 })();
